@@ -27,14 +27,14 @@ function exports(grunt) {
 				}
 			},
 			clientCheck: {
-				tsconfig: './mainContainer/client/tsconfig.json',
+				tsconfig: './client/tsconfig.json',
 				options: {
 					"compiler": "./node_modules/typescript/bin/tsc",
 					"noEmit": true
 				}
 			},
 			client: {
-				tsconfig: './mainContainer/client/tsconfig.json',
+				tsconfig: './client/tsconfig.json',
 				options: {
 					"compiler": "./node_modules/typescript/bin/tsc",
 					"noResolve": true,
@@ -51,7 +51,7 @@ function exports(grunt) {
 				mode: 'html',
 				pattern: '\\.html$',
 				src: [
-					'mainContainer/client'
+					'client'
 				]
 			},
 			css: {
@@ -60,7 +60,7 @@ function exports(grunt) {
 				extension: 'ncss.js',
 				sizeLimit: 100000,
 				src: [
-					'mainContainer/client'
+					'client'
 				]
 			}
 		}
