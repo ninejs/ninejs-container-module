@@ -2,9 +2,9 @@
 import { define } from 'ninejs/modules/moduleDefine'
 import MainContainer from './MainContainer'
 
-export default define(['router', 'singlePageContainer', 'ninejs/auth'], function (provide) {
-	provide('ninejs/mainContainer', function (config, router, frame, auth) {
-		var admin = new MainContainer(config, router, frame, auth);
+export default define(['router', 'singlePageContainer', 'ninejs/auth', 'container'], function (provide) {
+	provide('ninejs/mainContainer', function (config, router, frame, auth, container) {
+		var admin = new MainContainer(config, router, frame, auth, container);
 		return admin;
 	});
 });

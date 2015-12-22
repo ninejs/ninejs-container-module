@@ -22,6 +22,7 @@ declare class MainContainer extends Widget {
     Content: HTMLElement;
     content: Widget;
     helpWidget: Help;
+    frameMode: string;
     mainMenuMap: {
         [name: string]: {
             node: HTMLElement;
@@ -36,7 +37,7 @@ declare class MainContainer extends Widget {
         remove: () => void;
     };
     addMenu(menuId: string, node: HTMLElement): void;
-    addMenuItem(menuId: string, item: any, parentNode: HTMLElement): any;
+    addMenuItem(menuId: string, item: any, parentNode: HTMLElement): MenuItem;
     contentSetter(content: Widget): void;
     logoClick(): void;
     logout(): void;

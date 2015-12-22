@@ -1,4 +1,4 @@
-<div class="page-container tableFrame"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+<div class="ninejsMainContainer page-container %{frameMode}"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 
     <div class="sidebar-menu">
 
@@ -46,7 +46,7 @@
 
     <div class="main-content">
 
-        <div class="row">
+        <div class="header" data-ninejs-attach="header">
 
             <!-- Profile Info and Notifications -->
             <div class="col-md-6 col-sm-8 clearfix">
@@ -71,7 +71,7 @@
             <!-- Raw Links -->
             <div class="col-md-6 col-sm-4 clearfix hidden-xs">
 
-                <ul class="list-inline links-list pull-right">
+                <ul class="list-inline links-list pull-right logoutContainer">
 
                     <li class="sep"></li>
 
@@ -86,20 +86,13 @@
 
         </div>
 
-        <hr />
-
-        <div class="row" data-ninejs-attach="Content">
+        <div class="content" data-ninejs-attach="Content">
 
         </div>
 
-        <br />
-
-
         <!-- Footer -->
-        <footer class="main">
-
+        <footer class="main" data-ninejs-attach="footer">
             <span>&#169; 2015 </span><strong class="ml">NineJS</strong><span class="ml"> by </span><a class="ml" href="http://www.eduardoburgos.com/" target="_blank">Eduardo Burgos</a>
-
         </footer>
     </div>
 

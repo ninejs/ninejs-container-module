@@ -10,9 +10,9 @@
     var moduleDefine_1 = require('ninejs/modules/moduleDefine');
     var MainContainer_1 = require('./MainContainer');
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = moduleDefine_1.define(['router', 'singlePageContainer', 'ninejs/auth'], function (provide) {
-        provide('ninejs/mainContainer', function (config, router, frame, auth) {
-            var admin = new MainContainer_1.default(config, router, frame, auth);
+    exports.default = moduleDefine_1.define(['router', 'singlePageContainer', 'ninejs/auth', 'container'], function (provide) {
+        provide('ninejs/mainContainer', function (config, router, frame, auth, container) {
+            var admin = new MainContainer_1.default(config, router, frame, auth, container);
             return admin;
         });
     });

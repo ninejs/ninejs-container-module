@@ -4,7 +4,8 @@
 function exports(grunt) {
 	'use strict';
 
-	var tsfiles = ['**/*.ts', '!**/*.d.ts', '!node_modules/**/*.ts', '!**/node_modules/**/*.ts'];
+	var tsfiles = ['**/*.ts', '!**/*.d.ts', '!node_modules/**/*.ts', '!**/node_modules/**/*.ts'],
+		stylusFiles = [ '**/*.styl', '!node_modules/**' ];
 
 	require('load-grunt-tasks')(grunt);
 	// Project configuration.
@@ -45,6 +46,15 @@ function exports(grunt) {
 		},
 		tsd: {
 
+		},
+		stylus:
+		{
+			files: stylusFiles,
+			options:
+			{
+				urlfunc: 'url', // use embedurl('test.png') in our code to trigger Data URI
+				compress: true
+			}
 		},
 		nineplate: {
 			html: {
@@ -109,7 +119,7 @@ function exports(grunt) {
 	});
 
 	// Default task.
-	grunt.registerTask('default', ['tsd', 'nineplate', 'ts']);
+	grunt.registerTask('default', ['tsd', 'stylus', 'nineplate', 'ts']);
 
 }
 

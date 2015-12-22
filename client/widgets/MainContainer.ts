@@ -71,6 +71,7 @@ class MainContainer extends Widget {
 	Content: HTMLElement;
 	content: Widget;
 	helpWidget: Help;
+	frameMode: string;
 	mainMenuMap: { [name: string]: { node: HTMLElement, items: MenuItem[] }};
 	fixResize () {
 		this.slimScroll.style.height = (window.innerHeight - this.header.clientHeight - this.footer.clientHeight - this.slimScroll.offsetTop) + 'px';

@@ -20,8 +20,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     var setClass_1 = require('ninejs/ui/utils/setClass');
     var MenuItem = (function (_super) {
         __extends(MenuItem, _super);
-        function MenuItem() {
-            _super.apply(this, arguments);
+        function MenuItem(args) {
+            _super.call(this, args);
             this.skin = MenuItem_1.default;
             this.anchorClass = 'auto';
             this.icon = 'i i-dot';

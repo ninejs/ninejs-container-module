@@ -31,7 +31,26 @@ var fn = require('ninejs/_nineplate/utils/functions'),
     av,
     result,
     v,
-    _0 = 	function () {
+    _0 = 	function (node) {
+/* Here starts a live expression with attribute */ 
+av = '';
+av = av + 'ninejsMainContainer page-container ';
+putValue = context['frameMode'];
+if (av !== ''){
+	av = av + ((putValue) || '');
+
+} else {
+	av = ((putValue) || '');
+
+}
+node.className = av;
+return node;
+/* Here ends the live expression */ 
+
+},
+    _1,
+    _2,
+    _3 = 	function () {
 /* Here starts a live expression */ 
 node = e(node,'strong',node.ownerDocument);
 txn = t(node,'',node.ownerDocument);
@@ -41,17 +60,47 @@ return node;
 /* Here ends the live expression */ 
 
 },
-    _1,
-    _2;
+    _4,
+    _5;
 if (!document){
 	document = window.document;
 
 }
 node = document.createElement('div');
 nodes.push(node);
-av = '';
-av = av + 'page-container tableFrame';
-node.className = av;
+_1 = _0(node);
+/* Add trigger events here */ 
+_2 = 	function () {
+	var freeze = {},
+	    freezeNode = _1,
+	    wfn = 		function (name,oldValue,newValue) {
+		var temps = {},
+		    p;
+		if (!(oldValue === newValue)){
+			for (p in freeze){
+			if (freeze.hasOwnProperty(p)) {
+				temps[p] = context[p];
+				context[p] = freeze[p];
+
+			}
+			}			_0(freezeNode);
+			for (p in freeze){
+			if (freeze.hasOwnProperty(p)) {
+				context[p] = temps[p];
+
+			}
+			}
+		}
+
+};
+	return wfn;
+
+};
+ctxTemp = context;
+if (ctxTemp.watch){
+	ctxTemp.watch('frameMode',_2());
+
+}
 nodes.push(node);
 node = e(node,'div',node.ownerDocument);
 av = '';
@@ -187,8 +236,22 @@ node.className = av;
 nodes.push(node);
 node = e(node,'div',node.ownerDocument);
 av = '';
-av = av + 'row';
+av = av + 'header';
 node.className = av;
+attachTemp = r['header'];
+if (attachTemp){
+	if (Object.prototype.toString.call(attachTemp) === '[object Array]'){
+		attachTemp.push(node);
+
+	} else {
+		r['header'] = [attachTemp,node];
+
+	}
+
+} else {
+	r['header'] = node;
+
+}
 nodes.push(node);
 node = e(node,'div',node.ownerDocument);
 av = '';
@@ -219,11 +282,11 @@ av = av + 'ml';
 node.className = av;
 node = nodes.pop();
 nodes.push(node);
-_1 = _0();
+_4 = _3();
 /* Add trigger events here */ 
-_2 = 	function () {
+_5 = 	function () {
 	var freeze = {},
-	    freezeNode = _1,
+	    freezeNode = _4,
 	    wfn = 		function (name,oldValue,newValue) {
 		var temps = {},
 		    t,
@@ -235,7 +298,7 @@ _2 = 	function () {
 				context[p] = freeze[p];
 
 			}
-			}			t = _0();
+			}			t = _3();
 			freezeNode.parentNode.replaceChild(t,freezeNode);
 			freezeNode = t;
 			for (p in freeze){
@@ -254,7 +317,7 @@ ctxTemp = context;
 ctxTemp = ctxTemp['auth'];
 ctxTemp = ctxTemp['data'];
 if (ctxTemp.watch){
-	ctxTemp.watch('username',_2());
+	ctxTemp.watch('username',_5());
 
 }
 node = nodes.pop();
@@ -270,7 +333,7 @@ node.className = av;
 nodes.push(node);
 node = e(node,'ul',node.ownerDocument);
 av = '';
-av = av + 'list-inline links-list pull-right';
+av = av + 'list-inline links-list pull-right logoutContainer';
 node.className = av;
 nodes.push(node);
 node = e(node,'li',node.ownerDocument);
@@ -304,12 +367,9 @@ node = nodes.pop();
 node = nodes.pop();
 node = nodes.pop();
 nodes.push(node);
-node = e(node,'hr',node.ownerDocument);
-node = nodes.pop();
-nodes.push(node);
 node = e(node,'div',node.ownerDocument);
 av = '';
-av = av + 'row';
+av = av + 'content';
 node.className = av;
 attachTemp = r['Content'];
 if (attachTemp){
@@ -327,13 +387,24 @@ if (attachTemp){
 }
 node = nodes.pop();
 nodes.push(node);
-node = e(node,'br',node.ownerDocument);
-node = nodes.pop();
-nodes.push(node);
 node = e(node,'footer',node.ownerDocument);
 av = '';
 av = av + 'main';
 node.className = av;
+attachTemp = r['footer'];
+if (attachTemp){
+	if (Object.prototype.toString.call(attachTemp) === '[object Array]'){
+		attachTemp.push(node);
+
+	} else {
+		r['footer'] = [attachTemp,node];
+
+	}
+
+} else {
+	r['footer'] = node;
+
+}
 nodes.push(node);
 node = e(node,'span',node.ownerDocument);
 txn = t(node,'',node.ownerDocument);

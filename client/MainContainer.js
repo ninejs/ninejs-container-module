@@ -18,17 +18,19 @@ var __extends = (this && this.__extends) || function (d, b) {
     var deferredUtils_1 = require('ninejs/core/deferredUtils');
     var MainContainerUnit = (function (_super) {
         __extends(MainContainerUnit, _super);
-        function MainContainerUnit(config, router, frame, auth) {
+        function MainContainerUnit(config, router, frame, auth, container) {
             var _this = this;
             _super.call(this, config);
             this.config = config;
             var singlePageContainer = frame, self = this;
-            var mainContainer = new MainContainer_1.default({ router: router, config: config, auth: auth });
+            var mainContainer = new MainContainer_1.default({ router: router, config: config, auth: auth, frameMode: config.frameMode || 'flexFrame' });
             this.mainContainer = mainContainer;
             var loadDefer = deferredUtils_1.defer();
             var loadPromise = loadDefer.promise;
             mainContainer.show().then(function (domNode) {
                 singlePageContainer.addChild(mainContainer);
+                container.setContainer('footer', mainContainer.footer);
+                container.setContainer('header', mainContainer.header);
                 _this.Content = mainContainer.Content;
                 self.domNode = domNode;
                 mainContainer.on('updatedSkin', function () {

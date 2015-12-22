@@ -2,13 +2,20 @@
 
 import append from 'ninejs/ui/utils/append'
 import { when } from 'ninejs/core/deferredUtils'
-import Widget from 'ninejs/ui/Widget'
+import { default as Widget, WidgetArgs } from 'ninejs/ui/Widget'
 import defaultSkin from './Skin/MenuItem'
 import on from 'ninejs/core/on'
 import setClass from 'ninejs/ui/utils/setClass'
 import Skin from 'ninejs/ui/Skin';
 
 
+export interface MenuItemArgs extends WidgetArgs {
+	badgeValue?: string | number,
+	text?: string,
+	action?: (evt: any) => any,
+	class?: string,
+	key?: string
+}
 
 class MenuItem extends Widget {
 	skin: Skin = defaultSkin;
@@ -50,6 +57,9 @@ class MenuItem extends Widget {
 			append.toIndex(this.childrenContainer, domNode, index);
 			return item;
 		});
+	}
+	constructor (args: MenuItemArgs) {
+		super(args);
 	}
 }
 export default MenuItem;

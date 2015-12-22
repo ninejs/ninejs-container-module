@@ -5,6 +5,7 @@ import MainContainer from './widgets/MainContainer'
 import { when, defer } from 'ninejs/core/deferredUtils'
 import { Router } from 'ninejs/client/router'
 import Frame from 'ninejs/modules/client/FullScreenFrame'
+import { Container } from 'ninejs/modules/client/container'
 
 class MainContainerUnit extends Properties {
 	config: any;
@@ -34,17 +35,19 @@ class MainContainerUnit extends Properties {
 		var p = ['content'].concat(Array.prototype.slice.call(arguments, 0));
 		return this.mainContainer.set.apply(this.mainContainer, p);
 	}
-	constructor (config: any, router: Router, frame: Frame, auth: any) {
+	constructor (config: any, router: Router, frame: Frame, auth: any, container: Container) {
 		super(config);
 		this.config = config;
 		let singlePageContainer = frame,
 				self = this;
-		let mainContainer = new MainContainer({ router: router, config: config, auth: auth });
+		let mainContainer = new MainContainer({ router: router, config: config, auth: auth, frameMode: config.frameMode || 'flexFrame' });
 		this.mainContainer = mainContainer;
 		let loadDefer = defer();
 		let loadPromise = loadDefer.promise;
 		mainContainer.show().then((domNode) => {
 			singlePageContainer.addChild(mainContainer);
+			container.setContainer('footer', mainContainer.footer);
+			container.setContainer('header', mainContainer.header);
 			this.Content = mainContainer.Content;
 			self.domNode = domNode;
 
