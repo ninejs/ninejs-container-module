@@ -23,8 +23,6 @@ var __extends = (this && this.__extends) || function (d, b) {
         function MenuItem(args) {
             _super.call(this, args);
             this.skin = MenuItem_1.default;
-            this.anchorClass = 'auto';
-            this.icon = 'i i-dot';
         }
         MenuItem.prototype.onUpdatedSkin = function () {
             _super.prototype.onUpdatedSkin.call(this);
@@ -59,6 +57,8 @@ var __extends = (this && this.__extends) || function (d, b) {
         };
         return MenuItem;
     })(Widget_1.default);
+    MenuItem.prototype.icon = 'i i-dot';
+    MenuItem.prototype.anchorClass = 'auto';
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = MenuItem;
 });

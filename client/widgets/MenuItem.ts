@@ -10,17 +10,19 @@ import Skin from 'ninejs/ui/Skin';
 
 
 export interface MenuItemArgs extends WidgetArgs {
-	badgeValue?: string | number,
-	text?: string,
-	action?: (evt: any) => any,
-	class?: string,
-	key?: string
+	badgeValue?: string | number;
+	text?: string;
+	action?: (evt: any) => any;
+	class?: string;
+	key?: string;
+	icon?: string;
+	anchorClass?: string;
 }
 
 class MenuItem extends Widget {
 	skin: Skin = defaultSkin;
-	anchorClass: string = 'auto';
-	icon: string = 'i i-dot';
+	anchorClass: string;
+	icon: string;
 	action: (evt: any) => void;
 	caretNode: HTMLElement;
 	childrenContainer: HTMLElement;
@@ -62,4 +64,6 @@ class MenuItem extends Widget {
 		super(args);
 	}
 }
+MenuItem.prototype.icon = 'i i-dot';
+MenuItem.prototype.anchorClass = 'auto';
 export default MenuItem;

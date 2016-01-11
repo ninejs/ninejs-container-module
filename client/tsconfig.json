@@ -16,6 +16,7 @@
 
 
     "./module.ts",
+    "./index.ts",
     "./MainContainer.ts",
     "./widgets/MainContainer.ts",
     "./widgets/Skin/MainContainer.ts",

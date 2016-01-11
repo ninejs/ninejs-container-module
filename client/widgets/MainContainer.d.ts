@@ -1,6 +1,6 @@
 import Help from './Help';
 import Widget from 'ninejs/ui/Widget';
-import MenuItem from './MenuItem';
+import { default as MenuItem, MenuItemArgs } from './MenuItem';
 import Skin from 'ninejs/ui/Skin';
 import { Router } from 'ninejs/client/router';
 export interface ParentContainer {
@@ -37,7 +37,7 @@ declare class MainContainer extends Widget {
         remove: () => void;
     };
     addMenu(menuId: string, node: HTMLElement): void;
-    addMenuItem(menuId: string, item: any, parentNode: HTMLElement): MenuItem;
+    addMenuItem(menuId: string, item: MenuItemArgs, parentNode?: HTMLElement): MenuItem;
     contentSetter(content: Widget): void;
     logoClick(): void;
     logout(): void;

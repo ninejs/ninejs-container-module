@@ -9,7 +9,7 @@ import defaultSkin from './Skin/MainContainer'
 import append from 'ninejs/ui/utils/append'
 import setClass from 'ninejs/ui/utils/setClass'
 import setText from 'ninejs/ui/utils/setText'
-import MenuItem from './MenuItem'
+import { default as MenuItem, MenuItemArgs } from './MenuItem'
 import Skin from 'ninejs/ui/Skin';
 import { Router } from 'ninejs/client/router'
 
@@ -93,7 +93,7 @@ class MainContainer extends Widget {
 	addMenu (menuId: string, node: HTMLElement) {
 		this.mainMenuMap[menuId] = { node: node, items: [] };
 	}
-	addMenuItem (menuId: string, item: any, parentNode: HTMLElement) {
+	addMenuItem (menuId: string, item: MenuItemArgs, parentNode?: HTMLElement) {
 		var menuItem = new MenuItem(item),
 			self = this,
 			cl: string[] = [];

@@ -6,6 +6,8 @@ export interface MenuItemArgs extends WidgetArgs {
     action?: (evt: any) => any;
     class?: string;
     key?: string;
+    icon?: string;
+    anchorClass?: string;
 }
 declare class MenuItem extends Widget {
     skin: Skin;
