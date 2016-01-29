@@ -2,13 +2,13 @@
   "name": "ninejs-container-module",
   "description": "",
   "version": "0.0.1",
-  "author": "Eduardo Burgos <eburgos@novosit.com>",
+  "author": "Eduardo Burgos <eburgos@gmail.com>",
   "repository": "",
   "dependencies": {
-    "jquery": "novosit/jquery#32de2d7a5663cddaf85ed3f36a39e9da6a1c373c",
+    "jquery": "eburgos/jquery#32de2d7a5663cddaf85ed3f36a39e9da6a1c373c",
     "jquery-ui": "jquery/jquery-ui#1696405c09a4308ed2f17fff410907e3989b59c0",
     "bootstrap": "twbs/bootstrap",
-    "ninejs": "0.2.0"
+    "ninejs": "^0.2.2"
   },
   "main": "./module.js",
   "devDependencies": {
