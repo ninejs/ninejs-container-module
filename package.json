@@ -11,6 +11,7 @@
     "ninejs": "^0.2.2"
   },
   "main": "./module.js",
+  "dojoBuild": "profile.build.js",
   "devDependencies": {
     "fluidity": "^0.2.3",
     "grunt": "^0.4.5",
