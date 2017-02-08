@@ -14,14 +14,14 @@ function exports(grunt) {
 			serverCheck : {
 				tsconfig: './tsconfig.json',
 				options: {
-					"compiler": "./node_modules/typescript/bin/tsc",
+					"compiler": process.env.TS_COMPILER || "./node_modules/typescript/bin/tsc",
 					"noEmit": true
 				}
 			},
 			server : {
 				tsconfig: './tsconfig.json',
 				options: {
-					"compiler": "./node_modules/typescript/bin/tsc",
+					"compiler": process.env.TS_COMPILER || "./node_modules/typescript/bin/tsc",
 					"noResolve": true,
 					"declaration": true,
 					"failOnTypeErrors": false
@@ -30,14 +30,14 @@ function exports(grunt) {
 			clientCheck: {
 				tsconfig: './client/tsconfig.json',
 				options: {
-					"compiler": "./node_modules/typescript/bin/tsc",
+					"compiler": process.env.TS_COMPILER || "./node_modules/typescript/bin/tsc",
 					"noEmit": true
 				}
 			},
 			client: {
 				tsconfig: './client/tsconfig.json',
 				options: {
-					"compiler": "./node_modules/typescript/bin/tsc",
+					"compiler": process.env.TS_COMPILER || "./node_modules/typescript/bin/tsc",
 					"noResolve": true,
 					"declaration": true,
 					"failOnTypeErrors": false

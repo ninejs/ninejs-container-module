@@ -1,28 +1,35 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 (function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    else if (typeof define === 'function' && define.amd) {
-        define(["require", "exports", 'ninejs/ui/utils/append', 'ninejs/core/deferredUtils', 'ninejs/ui/Widget', './Skin/MenuItem', 'ninejs/core/on', 'ninejs/ui/utils/setClass'], factory);
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "ninejs/ui/utils/append", "ninejs/core/deferredUtils", "ninejs/ui/Widget", "./Skin/MenuItem", "ninejs/core/on", "ninejs/ui/utils/setClass"], factory);
     }
 })(function (require, exports) {
     'use strict';
-    var append_1 = require('ninejs/ui/utils/append');
-    var deferredUtils_1 = require('ninejs/core/deferredUtils');
-    var Widget_1 = require('ninejs/ui/Widget');
-    var MenuItem_1 = require('./Skin/MenuItem');
-    var on_1 = require('ninejs/core/on');
-    var setClass_1 = require('ninejs/ui/utils/setClass');
+    var append_1 = require("ninejs/ui/utils/append");
+    var deferredUtils_1 = require("ninejs/core/deferredUtils");
+    var Widget_1 = require("ninejs/ui/Widget");
+    var MenuItem_1 = require("./Skin/MenuItem");
+    var on_1 = require("ninejs/core/on");
+    var setClass_1 = require("ninejs/ui/utils/setClass");
     var MenuItem = (function (_super) {
         __extends(MenuItem, _super);
         function MenuItem(args) {
-            _super.call(this, args);
-            this.skin = MenuItem_1.default;
+            var _this = _super.call(this, args) || this;
+            _this.skin = MenuItem_1.default;
+            return _this;
         }
         MenuItem.prototype.onUpdatedSkin = function () {
             _super.prototype.onUpdatedSkin.call(this);
@@ -56,7 +63,7 @@ var __extends = (this && this.__extends) || function (d, b) {
             });
         };
         return MenuItem;
-    })(Widget_1.default);
+    }(Widget_1.default));
     MenuItem.prototype.icon = 'i i-dot';
     MenuItem.prototype.anchorClass = 'auto';
     Object.defineProperty(exports, "__esModule", { value: true });

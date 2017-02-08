@@ -1,13 +1,14 @@
 (function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    else if (typeof define === 'function' && define.amd) {
-        define(["require", "exports", 'path'], factory);
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "path"], factory);
     }
 })(function (require, exports) {
     'use strict';
-    var path = require('path');
+    const path = require("path");
     class MainContainer {
         constructor(config, ninejs, server) {
             this.config = config;
@@ -25,6 +26,7 @@
             });
         }
     }
+    Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = MainContainer;
 });
 //# sourceMappingURL=MainContainer.js.map

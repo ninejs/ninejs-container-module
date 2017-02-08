@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 (function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    else if (typeof define === 'function' && define.amd) {
-        define(["require", "exports", "ninejs/core/i18n!../i18n.json", './Help', 'ninejs/config', 'ninejs/core/deferredUtils', 'ninejs/ui/Widget', './Skin/MainContainer', 'ninejs/ui/utils/append', 'ninejs/ui/utils/setClass', 'ninejs/ui/utils/setText', './MenuItem'], factory);
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "ninejs/core/i18n!../i18n.json", "./Help", "ninejs/config", "ninejs/core/deferredUtils", "ninejs/ui/Widget", "./Skin/MainContainer", "ninejs/ui/utils/append", "ninejs/ui/utils/setClass", "ninejs/ui/utils/setText", "./MenuItem"], factory);
     }
 })(function (require, exports) {
     'use strict';
-    var Help_1 = require('./Help');
-    var config_1 = require('ninejs/config');
-    var deferredUtils_1 = require('ninejs/core/deferredUtils');
-    var Widget_1 = require('ninejs/ui/Widget');
-    var MainContainer_1 = require('./Skin/MainContainer');
-    var append_1 = require('ninejs/ui/utils/append');
-    var setClass_1 = require('ninejs/ui/utils/setClass');
-    var setText_1 = require('ninejs/ui/utils/setText');
-    var MenuItem_1 = require('./MenuItem');
+    var Help_1 = require("./Help");
+    var config_1 = require("ninejs/config");
+    var deferredUtils_1 = require("ninejs/core/deferredUtils");
+    var Widget_1 = require("ninejs/ui/Widget");
+    var MainContainer_1 = require("./Skin/MainContainer");
+    var append_1 = require("ninejs/ui/utils/append");
+    var setClass_1 = require("ninejs/ui/utils/setClass");
+    var setText_1 = require("ninejs/ui/utils/setText");
+    var MenuItem_1 = require("./MenuItem");
     var i18nResource = require('ninejs/core/i18n!../i18n.json');
     function i18n(n) {
         return i18nResource.resource[n] || n;
@@ -59,11 +65,13 @@ var __extends = (this && this.__extends) || function (d, b) {
     var MainContainer = (function (_super) {
         __extends(MainContainer, _super);
         function MainContainer(args) {
-            _super.call(this, args);
-            this.i18n = i18n;
-            this.config = config_1.default;
-            this.helpWidget = new Help_1.default({});
-            this.mainMenuMap = {};
+            var _this = _super.call(this, args) || this;
+            _this.i18n = i18n;
+            _this.config = config_1.default;
+            _this.set('skin', MainContainer_1.default);
+            _this.helpWidget = new Help_1.default({});
+            _this.mainMenuMap = {};
+            return _this;
         }
         MainContainer.prototype.fixResize = function () {
             this.slimScroll.style.height = (window.innerHeight - this.header.clientHeight - this.footer.clientHeight - this.slimScroll.offsetTop) + 'px';
@@ -128,7 +136,7 @@ var __extends = (this && this.__extends) || function (d, b) {
             this.router.go('/login', false);
         };
         return MainContainer;
-    })(Widget_1.default);
+    }(Widget_1.default));
     MainContainer.prototype.skin = MainContainer_1.default;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = MainContainer;

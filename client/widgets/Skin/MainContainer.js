@@ -1,16 +1,17 @@
 (function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    else if (typeof define === 'function' && define.amd) {
-        define(["require", "exports", "jQuery/jquery", "./MainContainer.9plate", "./MainContainer.ncss", "../../resources/css/core.ncss", "../../resources/css/forms.ncss", "../../resources/css/theme.ncss", "../../resources/css/entypo.ncss", "../../resources/css/font-awesome.ncss", 'ninejs/ui/Skin', 'ninejs/ui/utils/setClass', 'ninejs/core/on', 'ninejs/ui/bootstrap/bootstrap'], factory);
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "jQuery/jquery", "./MainContainer.9plate", "./MainContainer.ncss", "../../resources/css/core.ncss", "../../resources/css/forms.ncss", "../../resources/css/theme.ncss", "../../resources/css/entypo.ncss", "../../resources/css/font-awesome.ncss", "ninejs/ui/Skin", "ninejs/ui/utils/setClass", "ninejs/core/on", "ninejs/ui/bootstrap/bootstrap"], factory);
     }
 })(function (require, exports) {
     'use strict';
-    var Skin_1 = require('ninejs/ui/Skin');
-    var setClass_1 = require('ninejs/ui/utils/setClass');
-    var on_1 = require('ninejs/core/on');
-    var bootstrap_1 = require('ninejs/ui/bootstrap/bootstrap');
+    var Skin_1 = require("ninejs/ui/Skin");
+    var setClass_1 = require("ninejs/ui/utils/setClass");
+    var on_1 = require("ninejs/core/on");
+    var bootstrap_1 = require("ninejs/ui/bootstrap/bootstrap");
     var template = require('./MainContainer.9plate');
     var css = require('./MainContainer.ncss');
     ['../../resources/css/core.ncss',

@@ -140,6 +140,7 @@ class MainContainer extends Widget {
 	}
 	constructor (args: any) {
 		super(args);
+		this.set('skin', defaultSkin);
 		this.helpWidget = new Help({});
 		this.mainMenuMap = {};
 	}
